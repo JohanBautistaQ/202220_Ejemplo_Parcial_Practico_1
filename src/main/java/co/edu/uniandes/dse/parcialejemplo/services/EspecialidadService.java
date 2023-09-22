@@ -20,7 +20,7 @@ public class EspecialidadService {
 	public EspecialidadEntity createEspecialidad(EspecialidadEntity especialidad) throws IllegalOperationException {
 		log.info("Inicia proceso de creación de un especialidad");
       
-		if(especialidad.getDescripcion().length()>=10) {
+		if(!(especialidad.getDescripcion().length()>=10)) {
 			throw new IllegalOperationException("La descripcion debe tener al menos 10 caracteres");
 	    }
 		return especialidadRepository.save(especialidad);
